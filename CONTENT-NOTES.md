@@ -74,3 +74,9 @@ User approved the current design for commit. The authentic card back is shown in
 ## Playbook-led copy refinement — 4 October 2026
 
 Preserved desire-led headings and hero description. Applied Product Design Playbook V2.0, especially JTBD Copywriting (physical PDF p. 67): header CTA now points directly to learning approaches; closing CTA offers email contact through support, with availability as plain status text. Added a factual visible product-definition FAQ and distinct page descriptions/Open Graph text. No public domain, download, signup, pricing or rating was invented. COPY-PRINCIPLES.md records the rationale, page references and review checklist. Pre-update checkpoint is ba9c3b0.
+
+## Contact address update — 4 October 2026
+
+At the user’s request, support and privacy contact links now use contact@youcabulary.com. The earlier address above is historical. Mailto subject lines are preserved.
+
+Support and privacy email addresses are hex-encoded in the public HTML text and mailto attributes as lightweight source obfuscation. Link destinations and subject lines are unchanged; no JavaScript or extra interaction is required.

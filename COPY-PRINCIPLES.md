@@ -44,7 +44,7 @@ Use warm, plain English, short sentences and concrete verbs. Talk to “you”. 
 | Approach choices | I learn through what I love / I like a little structure / I want to keep what I find | Changes the example in place. These choices are exploratory, not permanent profiles. |
 | Card preview | Show card front / Show card back | Switches authentic screenshots; no app functionality is implied. |
 | Closing section | Talk about your learning needs | Opens the support page at its email contact section. Adjacent text explains that contact happens by email. |
-| Support contact | developer@spudspicer.com | Opens the reader’s mail app. Ownership must be confirmed before publication. |
+| Support contact | contact@youcabulary.com | Opens the reader’s mail app. Ownership must be confirmed before publication. |
 
 Prefer a specific action to “Learn more” or “Submit” when the destination can be stated simply. A functional control can use a literal label: clarity matters more than making every label emotional. Do not make release-status text resemble a download button.
 
@@ -87,3 +87,5 @@ Relevant official guidance:
 - Are page metadata, visible answers and product limitations consistent?
 
 Record a proposed edit as: **reader need → new wording → factual evidence → CTA destination → mobile check**. If an edit changes a product claim, recheck the app instead of relying on this guide’s snapshot.
+
+Contact addresses in public HTML use hexadecimal character references in both visible text and mailto links. Browsers decode them normally without JavaScript. Preserve this encoding when editing; it only deters simple source scrapers, not capable crawlers or spam. The address remains public, including in repository documentation.
