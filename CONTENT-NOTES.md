@@ -50,3 +50,23 @@ Official references:
 ## Repository naming correction
 
 At the user's request, renamed the local folder to D:/Development/youcabulary.github.io and selected youcabulary.github.io as the intended GitHub repository name. Website branding remains Youcabulary. No remote GitHub repository exists or was renamed. Historical subpath test results above retain their original tested URL.
+
+## Approved wordmark integration — 3 October 2026
+
+Reused original English and Japanese PNGs from D:/Development/youcabulary/lib/assets/branding, whose README identifies them as approved alternating navy/coral wordmarks. English marks replace text branding in all headers and footers; Japanese appears on an ivory backing above the study-card concept. Original pixels are unchanged; CSS clips transparent vertical margins as in the app. Navigation/actions use navy, headline emphasis uses coral, and supporting accent surfaces use light coral. No external fonts or image dependencies added.
+
+## App icon and current title treatment — 4 October 2026
+
+Reused approved default-light.svg and japanese-light.svg from the app assets/branding/icons directory without modifying artwork. The Y icon accompanies English header/footer branding and the closing section; Japanese icon accompanies the Japanese title in the card preview. Browser favicon now uses the approved Y; touch icon reuses the app web Icon-192.png. Original title PNGs remain unchanged. Inline SVG colour matrices mirror lib/ui/brand_logo.dart exactly in sRGB with preserved alpha: light #183E75/#D93632 and dark #699AF2/#F27D70. Removed the previous Japanese ivory backing panel. This continues the pending branding revision; no app files were changed.
+
+## Favicon verification — 4 October 2026
+
+Fetched both origins; website main has no incoming commits and app main is 74cac9515d1b202783819e37aa8d023d47caaf54. Previous SVG artwork matched the approved vector (byte differences were line endings), but had square corners. All four pages now use the exact rounded 64px web/favicon.png from that app commit, saved as assets/app-favicon-74cac951.png to invalidate old browser favicon caches. Visible icons and touch icon were also refreshed directly from that Git revision. Pending branding edits preserved.
+
+## Authentic card presentation — 4 October 2026
+
+Replaced the invented HTML study card and floating product annotations with front/back captures from the actual CardPreviewScreen and its shared StudyCardFrontFace/StudyCardBackFace at app origin/main 74cac951. Captured with Flutter at 390px viewport, real light theme, English UI scope, Windows Segoe UI and Yu Gothic font fallback; 2x raster output of the rendered Card bounds, with no artwork retouching. This is sample custom vocabulary (木漏れ日 / こもれび / sunlight filtering through trees), no optional POS/level/image metadata and no device audio. Font fallback is explicitly provided because the Flutter test runner has no OS fallback. Device fonts and user settings can differ. Website button outside the image swaps the two captures; it is not depicted as an in-app button. Source capture harness: tools/capture_card_test.dart; run flutter test --no-pub with its absolute path from the app repository. Source app files were not edited.
+
+## Approved website checkpoint — 4 October 2026
+
+User approved the current design for commit. The authentic card back is shown initially with the original tilt and shadow. Two surrounding website callouts are restored: Your interests / Your next words, and Progress at your pace. They are outside the unmodified app image. Front/back switching remains available. Link/package checks, JavaScript syntax, and browser checks at 320, 390, 768 and 1440px passed.
