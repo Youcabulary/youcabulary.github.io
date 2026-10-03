@@ -36,3 +36,5 @@ The compatibility review did not configure DNS, GitHub hosting or a live deploym
 GitHub Pages is suitable technically for this informational project site. GitHub restricts sites primarily facilitating commercial transactions or operating commercial SaaS; keep checkout, paid service delivery, login and sensitive transactions off Pages. See https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits .
 
 The privacy policy is still a pre-release draft, independent of hosting compatibility. Finalise operator/contact details and release data practices before App Store submission.
+
+Copy review: see [COPY-PRINCIPLES.md](COPY-PRINCIPLES.md) for desire-led headings, CTA destinations, playbook references and a future-edit checklist. This guide is excluded from the deployed website by the publishing allowlist.

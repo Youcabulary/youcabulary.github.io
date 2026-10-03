@@ -70,3 +70,7 @@ Replaced the invented HTML study card and floating product annotations with fron
 ## Approved website checkpoint — 4 October 2026
 
 User approved the current design for commit. The authentic card back is shown initially with the original tilt and shadow. Two surrounding website callouts are restored: Your interests / Your next words, and Progress at your pace. They are outside the unmodified app image. Front/back switching remains available. Link/package checks, JavaScript syntax, and browser checks at 320, 390, 768 and 1440px passed.
+
+## Playbook-led copy refinement — 4 October 2026
+
+Preserved desire-led headings and hero description. Applied Product Design Playbook V2.0, especially JTBD Copywriting (physical PDF p. 67): header CTA now points directly to learning approaches; closing CTA offers email contact through support, with availability as plain status text. Added a factual visible product-definition FAQ and distinct page descriptions/Open Graph text. No public domain, download, signup, pricing or rating was invented. COPY-PRINCIPLES.md records the rationale, page references and review checklist. Pre-update checkpoint is ba9c3b0.
