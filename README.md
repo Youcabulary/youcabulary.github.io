@@ -57,3 +57,13 @@ GitHub Pages is suitable technically for this informational project site. GitHub
 The privacy policy is still a pre-release draft, independent of hosting compatibility. Finalise operator/contact details and release data practices before App Store submission.
 
 Copy review: see [COPY-PRINCIPLES.md](COPY-PRINCIPLES.md) for desire-led headings, CTA destinations, playbook references and a future-edit checklist. This guide is excluded from the deployed website by the publishing allowlist.
+
+## Colour-vision visual checks
+
+Run `npm run test:vision` on Windows after installing the same dependencies and Chromium used for accessibility tests. Open the report with `npx playwright show-report vision-report`.
+
+The suite captures normal vision, protanopia, deuteranopia, tritanopia and achromatopsia on desktop and mobile Chromium. Each covers all four pages, each selected learning approach, the skip-link focus and card-button focus. Screenshots are attached even on passing tests. The GitHub `colour-vision-report` artifact retains reports, actual/expected/difference images on failures and traces for 14 days. A failing comparison blocks deployment.
+
+Baselines live in `tests/vision-baselines/win32`. CI uses windows-2025 to keep Windows fonts separate from the Linux axe job. Browser/OS/font changes can still cause differences; review the first hosted run and do not blindly refresh baselines. Other operating systems require their own reviewed baselines. Missing baselines must be generated explicitly with `npm run test:vision:update`, visually reviewed and committed. Normal CI never updates them. The 0.2% pixel tolerance accommodates small rendering noise, not a readability threshold.
+
+These simulations are review aids, not models of every person's vision. Axe tests source colour contrast separately; screenshot comparisons detect visual changes, not WCAG compliance. Inspect labels, focus, boundaries and selected states for readability and cues beyond colour. Keep a baseline only after human review; involve people with colour-vision differences where possible.

@@ -50,9 +50,32 @@ jobs:
           path: _site
           include-hidden-files: true
 
+  colour-vision:
+    # Windows baselines must not be compared with Linux font rendering.
+    runs-on: windows-2025
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install chromium
+      - name: Colour vision visual regression tests
+        run: npm run test:vision
+      - name: Upload colour vision review report
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: colour-vision-report
+          path: |
+            vision-report/
+            vision-results/
+          retention-days: 14
+
   deploy:
     if: github.event_name != 'pull_request'
-    needs: build
+    needs: [build, colour-vision]
     runs-on: ubuntu-latest
     permissions:
       pages: write

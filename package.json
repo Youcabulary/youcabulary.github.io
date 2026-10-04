@@ -1,1 +1,14 @@
-{"name":"youcabulary-website","private":true,"scripts":{"test:a11y":"playwright test","test:a11y:report":"playwright show-report"},"devDependencies":{"@axe-core/playwright":"4.13.0","@playwright/test":"1.63.0"}}
+{
+  "name": "youcabulary-website",
+  "private": true,
+  "scripts": {
+    "test:a11y": "playwright test accessibility.spec.cjs",
+    "test:a11y:report": "playwright show-report",
+    "test:vision": "playwright test --config=playwright.vision.config.cjs",
+    "test:vision:update": "npm run test:vision -- --update-snapshots"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.13.0",
+    "@playwright/test": "1.63.0"
+  }
+}
