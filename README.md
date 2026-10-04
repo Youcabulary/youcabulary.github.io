@@ -1,6 +1,6 @@
 # Youcabulary website
 
-Static landing page, support, draft privacy and source-attribution pages. No build or package installation required.
+Static landing page, support, draft privacy and source-attribution pages. No build or package installation required to serve the site. Automated accessibility tests use development-only npm dependencies.
 
 ## Preview
 
@@ -22,9 +22,28 @@ For GitHub Pages hosting, create the agreed GitHub repository, add it as a separ
 
 Run `python check_site.py` for links and structural checks; `node --check assets/site.js` for syntax. Browser review at desktop and phone sizes is also required.
 
+## Accessibility checks
+
+Requires Node.js 24 and Python on PATH. From the repository root:
+
+```sh
+npm ci
+npx playwright install chromium
+npm run test:a11y
+npm run test:a11y:report
+```
+
+On Linux, use `npx playwright install --with-deps chromium` to install browser system dependencies too.
+
+Playwright and axe-core scan all four pages with WCAG 2.2 A/AA rule tags in desktop and mobile Chromium. Tests cover each learning approach, both card faces, expanded FAQs, keyboard activation/focus and 320px reflow. This is automated coverage, not a conformance certification or a substitute for actual screen-reader and zoom testing. No rules or elements are excluded.
+
+The HTML report includes full axe JSON attachments, including violations and inconclusive (`incomplete`) checks requiring human review. Failures include screenshots and traces. Local reports are ignored by Git. CI uploads `accessibility-report` for 14 days, even when tests fail; test failures block deployment. PRs run validation but do not deploy. The publication allowlist excludes npm dependencies, tests and reports.
+
+See [DEPLOYMENT-CHECKLIST.md](DEPLOYMENT-CHECKLIST.md) before publishing, including manual accessibility review.
+
 ## Publishing checklist
 
-1. Confirm the GitHub owner/repository. GitHub Free requires a public source repository; a public repository also exposes committed source and notes, even though notes are excluded from the deployed website.
+1. Complete [DEPLOYMENT-CHECKLIST.md](DEPLOYMENT-CHECKLIST.md), including accessibility review, then confirm the GitHub owner/repository. GitHub Free requires a public source repository; a public repository also exposes committed source and notes, even though notes are excluded from the deployed website.
 2. Push main, enable Settings > Pages > GitHub Actions, then run Publish GitHub Pages manually if the initial push preceded Pages setup. Further pushes to main publish automatically.
 3. Ensure Actions are allowed and the github-pages environment permits main. The deployment job requests only Pages write and OIDC token permissions; checkout uses read-only repository access.
 4. Use the exact deployment URL reported by Actions. An existing account-level custom domain can influence project URLs. The website works under either a domain root or project subpath.
