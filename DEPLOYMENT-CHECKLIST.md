@@ -34,10 +34,10 @@ Review home, support, privacy and sources, plus learning approaches, both card f
 
 ## Colour-vision review
 
-- [ ] Run `npm run test:vision` on Windows and review `vision-report` or the CI `colour-vision-report` artifact.
+- [ ] Before pushing to GitHub main, run `npm run test:vision` locally on Windows and open `npx playwright show-report vision-report`. Record the tested revision and review outcome. This suite is local-only; GitHub Actions does not run or enforce it. Resolve failures before releasing.
 - [ ] Compare normal, protanopia, deuteranopia, tritanopia and achromatopsia views on desktop and mobile. Inspect all pages, selected approaches, skip-link focus and card-button focus.
 - [ ] Confirm text, focus indicators and control boundaries remain discernible; meaning and selected states must not rely on colour alone. A stable screenshot does not establish accessibility.
-- [ ] Review baseline additions/changes individually before accepting them. Record reviewer, revision and limitations. Do not update snapshots solely to make CI green.
+- [ ] Review baseline additions/changes individually before accepting them. Record reviewer, revision and limitations. Do not update snapshots solely to make tests pass.
 
 ## Publish and verify
 
