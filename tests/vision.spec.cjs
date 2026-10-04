@@ -1,11 +1,6 @@
 const { test, expect } = require('@playwright/test');
 const simulations = ['none', 'protanopia', 'deuteranopia', 'tritanopia', 'achromatopsia'];
-async function ready(page) {
-  await page.evaluate(async () => {
-    await document.fonts.ready;
-    await Promise.all([...document.images].map(img => img.decode()));
-  });
-}
+const { ready } = require('./image-ready.cjs');
 async function capture(page, info, name, locator = page) {
   await ready(page);
   const options = locator === page ? { fullPage: true } : {};
